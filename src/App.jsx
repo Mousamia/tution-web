@@ -20,22 +20,29 @@ function App() {
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
-    const users = { name, email };
+    const user = { name, email };
 
-    console.log(users);
+    console.log(user);
 
     fetch('http://localhost:5000/users', {
-      method: 'post',
-      header: {
-        'content-type': 'application/json',
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
       },
 
       body: JSON.stringify(users)
     })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-      })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+
+      let newUser = [...users, data];
+      console.log(newUser);
+      setUsers(newUser);
+      console.log(users);
+    
+      
+    })
 
 
   }
