@@ -7,11 +7,24 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './components/Home/Home';
+import About from './components/About/About'
+import First from './components/First/First';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home>
+    element: <Home></Home>,
+    children: [
+      {
+        path: "/",
+        element: <First></First>
+      },
+      {
+        path: "about",
+        element: <About></About>
+      },
+    ],
+    
   }
 ]);
 
@@ -20,6 +33,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+   <RouterProvider router={router} />
   </React.StrictMode>,
 )
