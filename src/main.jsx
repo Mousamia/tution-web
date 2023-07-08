@@ -11,6 +11,7 @@ import About from './components/About/About'
 import First from './components/First/First';
 import Contact from './components/Contact/Contact';
 import Friends from './components/Friends/Friends';
+import FriendDetail from './components/FriendDetail/FriendDetail';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,13 @@ const router = createBrowserRouter([
         loader: () => fetch('https://jsonplaceholder.typicode.com/users/')
       },
       {
+        path: "friend/:friendId",
+        element: <FriendDetail></FriendDetail>,
+        loader: ({params}) => fetch( `https://jsonplaceholder.typicode.com/users/${params.friendId}`),
+        // loader: ({params})=> console.log(params)
+        
+      },
+      {
         path: "about",
         element: <About></About>
       },
@@ -34,9 +42,9 @@ const router = createBrowserRouter([
         path: "contact",
         element: <Contact></Contact>
       },
-     
+
     ],
-    
+
   }
 ]);
 
@@ -45,6 +53,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
