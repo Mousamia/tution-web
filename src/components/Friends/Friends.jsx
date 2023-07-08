@@ -11,6 +11,7 @@ const Friends = (props) => {
             {
                 friends.map( friend => <Friend 
                 friend={friend}
+                key={friend.id}
                 ></Friend>)
             }
             

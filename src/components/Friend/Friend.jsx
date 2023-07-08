@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Friend = ({ friend }) => {
     const { name, email, id, username } = friend;
     const  seeDetails = (id) => {
-        console.log("Id", id);
+        // console.log("Id", id);
     }
  
     return (
