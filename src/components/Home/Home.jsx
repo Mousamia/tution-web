@@ -9,7 +9,7 @@ const Home = () => {
             <h1 className='text-3xl font-extrabold'>Home</h1>
             <ul className='flex gap-5 text-purple-700'>
                 <li> <Link to={"/"}> First</Link> </li>
-                <li> <ActiveLink to={"/friends"}> Friends</ActiveLink></li>
+                <li> <Link to={"/friends"}> Friends</Link></li>
                 <li><Link to={"/about"}> about</Link></li>
                 <li><Link to={"/contact"}> Contcat </Link></li>
             </ul>
@@ -17,7 +17,7 @@ const Home = () => {
             <div>
 
                 {
-                    navigation.state === 'idle' && 'loading......'
+                    navigation.state === 'idle' && 'IDle......'
 
                 }
             </div>
