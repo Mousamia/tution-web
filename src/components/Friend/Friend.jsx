@@ -6,10 +6,11 @@ const Friend = ({ friend }) => {
     let messge;
     const seeDetails = (id) => {
         // console.log("Id", id);
-        if(true) {
-             messge = <h2>  somis </h2>
-        }
     }
+
+    if(true) {
+        messge = <h2>  somis </h2>
+   }
 
 
 
